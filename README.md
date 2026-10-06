@@ -358,7 +358,7 @@ Live mode appears only when **both** `GEMINI_API_KEY` and `DATABASE_URL` secrets
 
 ### Deploy
 
-The live demo runs on Streamlit Community Cloud from the `main` branch. To deploy it elsewhere:
+The live demo runs on Streamlit Community Cloud from the `main` branch. A scheduled GitHub Actions job (keep-alive.yml) visits the demo every 6 hours so it doesn't sleep. To deploy it elsewhere:
 
 - **Entrypoint:** `dashboard/app.py`
 - **Requirements:** `dashboard/requirements.txt`, a light dashboard-only list. Streamlit picks it up because it sits next to the entrypoint; the root `requirements.txt` (dbt, pgserver) is not needed.
